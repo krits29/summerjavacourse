@@ -18,7 +18,58 @@ public class VicPlus extends Vic
 		{
 			moveOn();
 		}
+		backUp();
 	}
+	
+	public boolean lastIsFilled()
+	{
+		boolean result = true;
+		
+		while (seesSlot())
+		{
+			moveOn();
+		}
+		backUp();
+		
+		if (seesCD())
+		{
+			Vic.say ("last slot is filled");
+		}
+		else
+		{
+			Vic.say ("last slot is open");
+		}
+		
+		return result;
+	}
+	
+	public boolean goToFirstEmpty()
+	{
+		while (seesSlot() && seesCD())
+		{
+			moveOn();
+		}
+		
+		Vic.say("at first empty slot");
+		
+		boolean result = seesSlot();
+		return result;
+	}
+	
+	public boolean goToFirstFilled()
+	{
+		while (seesSlot() && !seesCD())
+		{
+			moveOn();
+		}
+		
+		Vic.say("at first filled slot");
+		
+		boolean result = seesSlot();
+		return result;
+	}
+	
+	
 	
 	public boolean hasNoSlot()
 	{
@@ -31,6 +82,91 @@ public class VicPlus extends Vic
 				rval = true;
 			return rval; */
 		return seesSlot() && seesCD();
+	}
+	
+	public void fillFirstEmptySlot()
+	{
+		String pos = getPosition(); //remembers the original position
+		
+		while (seesCD())
+		{
+			moveOn();
+		}
+		putCD();
+		
+		while (!getPosition().equals(pos))
+		{
+			backUp();
+		}
+	
+	}
+	
+	public void fillLastEmptySlot()
+	{
+		String position = getPosition();
+		
+		while (seesSlot())
+		{
+			moveOn();
+		}
+		backUp();
+		
+		
+		while ( seesCD() && !getPosition().equals(position))
+		{
+			backUp();
+		}
+		
+		if (!seesCD())
+		{
+			putCD();
+		}
+		
+		while (!position.equals(getPosition()))
+		{
+			backUp();
+		}
+	}
+	
+	
+	public boolean goToLastCD()
+	{
+		boolean result = false;
+		String pos = getPosition();
+		while (seesSlot())
+		{
+			if (seesCD())
+			{	
+				result = true;
+				pos = getPosition();
+			}
+			moveOn();
+		}
+		
+		while (!getPosition().equals(pos))
+		{
+			backUp();
+		}
+		
+		return result;
+	}
+	
+	public boolean hasSomeFilledSlot()
+	{
+		String pos = getPosition();
+		
+		while (seesSlot() && !seesCD())
+		{
+			moveOn();
+		}
+		
+		boolean result = seesSlot();
+		while (!getPosition().equals(pos))
+		{
+			backUp();
+		}
+		
+		return result;
 	}
 	
 	public boolean canPutCD()
@@ -53,6 +189,17 @@ public class VicPlus extends Vic
 			moveOn();
 			putCD();
 		}
+	}
+	
+	public void takeOneBefore()
+	{
+		backUp();
+		while (!seesCD()) //! means opposite, in this case it means 'not'
+		{
+			backUp();
+		}
+		takeCD();
+		
 	}
 	
 	public void putNextAvailableOrig()

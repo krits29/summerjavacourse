@@ -12,16 +12,32 @@ public class IfElseStatements
 			Vic.say("horse");*/
 		
 		Vic test = new Vic();
+		Vic sally = new Vic();
+		
 		if(test.seesSlot())
 		{
 			test.putCD();
 			test.moveOn();
 		}
-		else{
+		else
+		{
 			test.takeCD();
 		}
 		
 		VicDowner downee = new VicDowner();
 		downee.downShift();
+		
+		while (test.seesSlot())
+		{
+			System.out.println(test.getPosition());
+			test.moveOn();
+		}
+		
+		while (sally.seesSlot())
+		{
+			System.out.println(sally.getPosition());
+			sally.moveOn();
+		}
+		
 	}
 }

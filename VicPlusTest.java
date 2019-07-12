@@ -23,6 +23,29 @@ public class VicPlusTest
 			Vic.say("can put CD");
 		elseVic.say("pig");*/
 		
-		pluto.toLastSlot();
-	}
+		//pluto.toLastSlot();
+		
+		/* if (pluto.hasSomeFilledSlot())
+		{
+			Vic.say("hasSomeFilledSlot");
+		}
+		else
+		{
+			Vic.say ("giraffe");
+		}*/
+		
+		/* if (pluto.goToLastCD())
+		{
+			Vic.say("at Last CD");
+		}
+		else
+		{
+			Vic.say ("never mind");
+		} */
+	
+		//pluto.fillFirstEmptySlot();
+		
+		pluto.goToFirstFilled();
+	} 
+	
 }
