@@ -11,6 +11,21 @@ public class VicPlus extends Vic
 				moveOn();
 		}
 	}
+
+	public void fillOneSlot()
+	{
+		if (seesSlot() && !seesCD())
+		{
+			moveOn();
+		}		
+
+		while (seesSlot() && seesCD())
+		{
+			moveOn();
+		}
+			putCD();
+			Vic.say("Found next available slot and put a CD");
+	}
 	
 	public void toLastSlot()
 	{
