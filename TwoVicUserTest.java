@@ -38,7 +38,6 @@ public class TwoVicUserTest
 			//nothing
 		}
 		
-		
 	} 
 	
 	private static void goToEnd( Vic param )
