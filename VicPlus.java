@@ -84,7 +84,71 @@ public class VicPlus extends Vic
 		return result;
 	}
 	
+	public boolean seesEvensFilled()
+	{
+		if (seesSlot())
+		{
+			moveOn();
+		}
+		boolean result = seesOddsFilled();
+		backUp();
+		return result;
+	}
 	
+	public void bringBack()
+	{
+		if (seesSlot())
+		{
+			String pos = getPosition();
+			
+			if (seesCD())
+			{
+				takeCD();
+			}
+			moveOn();
+			
+			while (seesSlot())
+			{
+				if (seesSlot() && seesCD())
+				{
+					takeCD();
+					backUp();
+					putCD();
+					moveOn();
+				}
+			}
+			
+			while (!pos.equals(getPosition()))
+			{
+				backUp();
+			}
+		
+		}
+	}
+	
+	
+	public boolean seesOddsFilled()
+	{
+		String pos = getPosition();
+		while (seesSlot() && seesCD())
+		{
+			moveOn();
+			if (seesSlot())
+			{
+				moveOn();
+			}
+		}
+		Vic.say ("odds filled");
+		
+		boolean result = !seesSlot();
+		
+		while (!pos.equals(getPosition()))
+		{
+			backUp();
+		}
+		
+		return result;
+	}
 	
 	public boolean hasNoSlot()
 	{

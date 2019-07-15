@@ -28,4 +28,23 @@ public class SmartTurtle extends Turtle
 		paint(60, 30);
 		paint(60, 30);
 	}
+	
+	public void SpiralAnimation()
+	{
+		for(int val = 0; val < 40; val++)
+		{
+			switchTo( Turtle.GREEN );
+			fillCircle( 60 ); 
+			Turtle.sleep( 200 );
+			move(0, 30);
+			move(10, 15);
+			move(25, 5);
+			switchTo( Turtle.BLUE );
+			fillCircle( 60 );
+			Turtle.sleep( 200 );
+			move(0, 30);
+			move(10, 15);
+			move(25, 5);
+		}
+	}
 } 

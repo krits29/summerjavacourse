@@ -45,7 +45,21 @@ public class VicPlusTest
 	
 		//pluto.fillFirstEmptySlot();
 		
-		pluto.goToFirstFilled();
+		//pluto.seesOddsFilled();
+		
+		/* if (pluto.seesEvensFilled())
+		{
+			Vic.say( "evens filled" );
+			
+		}
+		else 
+		{
+			Vic.say( "evens arent filled");
+		} */
+		
+		pluto.bringBack(); 
+		
+		
 	} 
 	
 }
