@@ -15,5 +15,14 @@ public class SmartTurtleTest
 		//smarty.SpiralAnimation();
 		
 		smarty.BoxSpiral();
+		
+		/* TwistedTurtle twist = new TwistedTurtle(45);
+		twist.paint(0, 128);
+		
+		TwistedTurtle sally = new TwistedTurtle(-45, 128);
+		sally.switchTo(Turtle.RED);
+		sally.fillCircle( 64 );
+		
+		TwistedTurtle jane = new TwistedTurtle(); */
 	}
 }

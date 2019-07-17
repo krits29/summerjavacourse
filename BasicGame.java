@@ -4,6 +4,7 @@ public class BasicGame
 {
 	private String secretWord = "duck";
 	private String usersGuess = "none";
+	private String counter = "";
 	
 	public void playOneGame()
 	{
@@ -14,6 +15,7 @@ public class BasicGame
 			askUsersNextChoice();
 		}
 		showFinalStatus();
+		
 	}
 	
 	public void playManyGames()
@@ -22,6 +24,7 @@ public class BasicGame
 		do
 		{
 			playOneGame();
+			
 			again = JOptionPane.showConfirmDialog( null, "again?");
 		}while (again == JOptionPane.YES_OPTION);
 	}
@@ -39,8 +42,38 @@ public class BasicGame
 	public boolean shouldContinue()
 	{
 		boolean rval = !usersGuess.equals( secretWord );
+		
+		if (rval)
+		{
+			counter = counter + "x";
+		}
+		
+		if (counter.equals("xxxxx"))
+		{
+			rval = false;
+		}
+		
 		return rval;
 	}
+	
+	/* public void RightAfterFive()
+	{
+		for (int i = 0; i < 6; i++)
+		{
+			if (!usersGuess.equals( secretWord ))
+			{
+				JOptionPane.showMessageDialog( null, "Sorry, that's incorrect");
+			}
+			else if (usersGuess.equals( secretWord ))
+			{
+				JOptionPane.showMessageDialog( null, "That's correct!!! Congrats");
+			}
+			else
+			{
+				JOptionPane.showMessageDialog( null, "Ummmm. Try Again");
+			}
+		}
+	} */	
 	
 	public void showUpdatedStatus()
 	{

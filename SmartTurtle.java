@@ -1,4 +1,5 @@
 import edu.uweo.javaintro.tools.Turtle;
+import java.awt.Color;
 
 public class SmartTurtle extends Turtle
 {
@@ -56,4 +57,19 @@ public class SmartTurtle extends Turtle
 			Turtle.sleep( 200 );
 		}
 	}
+	
+	/* public void TwistedTurtle(int angle)
+	{
+		move( angle, 0 );
+	}
+	
+	public void TwistedTurtle(int angle)
+	{
+		move( angle, distance );
+	}
+	
+	public void TwistedTurtle()
+	{
+		//this does nothing but exist, kinda like some people
+	} */
 } 
