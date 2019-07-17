@@ -12,6 +12,8 @@ public class SmartTurtleTest
 		alec.move( 90, 60 );
 		alec.makeBigSquare(); */
 		
-		smarty.SpiralAnimation();
+		//smarty.SpiralAnimation();
+		
+		smarty.BoxSpiral();
 	}
 }

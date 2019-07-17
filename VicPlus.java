@@ -125,8 +125,7 @@ public class VicPlus extends Vic
 		
 		}
 	}
-	
-	
+		
 	public boolean seesOddsFilled()
 	{
 		String pos = getPosition();

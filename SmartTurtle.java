@@ -47,4 +47,13 @@ public class SmartTurtle extends Turtle
 			move(25, 5);
 		}
 	}
+	
+	public void BoxSpiral()
+	{		
+		for(int inx = 0; inx < 80; inx++)
+		{
+			paint(90, (inx * 8));
+			Turtle.sleep( 200 );
+		}
+	}
 } 
