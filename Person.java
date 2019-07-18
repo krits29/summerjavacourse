@@ -1,3 +1,5 @@
+import javax.swing.JOptionPane;
+
 public class Person
 {
 	private String firstName;
@@ -19,26 +21,26 @@ public class Person
 	{
 		firstName = name;
 	}
-	
+
 	public String getFirstName()
 	{
 		return firstName;
 	}
-	
+
 	public void setLastName( String name )
 	{
 		firstName = name;
 	}
-	
+
 	public String getLastName()
 	{
 		return firstName;
 	}
-	
-	
+
 	public String toString()
 	{
 		String str = lastName + ", " + firstName;
 		return str;
 	} 
+
 }

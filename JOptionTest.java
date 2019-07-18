@@ -24,8 +24,17 @@ public class JOptionTest
 		//Turtle.sleep(1000);
 		//BoxTurtle boxy = new BoxTurtle(64, Turtle.RED);
 		
-		Person zilla = new Person("George", "Washington");
-		System.out.println(zilla);
+		//Person zilla = new Person("George", "Washington");
+		//System.out.println(zilla);
+		
+		ImportantPerson peep1 =  new ImportantPerson();
+		ImportantPerson peep2 =  new ImportantPerson( "George", "Washington");
+		ImportantPerson peep3 =  new ImportantPerson( "George", "Washington", "June 10");
+		System.out.println( "peep1 " + peep1);
+		System.out.println( "peep2 " + peep2);
+		System.out.println( "peep3 " + peep3);
+		
+		peep1.setName( "Tom", "Jefferson", "May 15"); 
 		
 	}
 	
